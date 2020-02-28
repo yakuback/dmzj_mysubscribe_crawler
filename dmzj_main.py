@@ -57,6 +57,9 @@ class GetMySubscribe:
             print("login msg:" + msg + "[failed]")
             raise LoginErr(code)
 
+    def close(self):
+        self.session.close()
+        
     def get_mysubscribe(self):
         prejson = self.session.get("https://m.dmzj.com/mysubscribe", headers=self.headers)
         prejson.raise_for_status()  # 检查状态码
