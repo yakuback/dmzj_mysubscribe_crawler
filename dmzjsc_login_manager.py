@@ -4,7 +4,7 @@ import json
 from bs4 import BeautifulSoup
 
 
-class GetMySubscribe:
+class LoginManager:
     def __init__(self, username, password):
         self.username = username
         self.password = password
