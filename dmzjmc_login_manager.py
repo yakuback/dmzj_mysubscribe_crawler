@@ -50,7 +50,7 @@ class LoginManager:
             self._logprinter("Login Msg", msg, True)
         else:
             self._logprinter("Login Msg", msg, False)
-            raise LoginError(code)
+            raise LoginError(msg)
 
     @staticmethod
     def _check_login_status(raw_respons):
