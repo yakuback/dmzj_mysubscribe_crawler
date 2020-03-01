@@ -15,12 +15,12 @@ class LoginManager:
             (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36 Edg/80.0.361.62", 
             "Referer": "https://m.dmzj.com/login.html"
             }
+        self.session = requests.Session()  # 实例化Session
+        self.session.headers.update(self.headers)
         self._logprinter("LoginMan", "Loading", True)
         
     def _get_login_page_res(self):
         # 获取self.login_url的Response对象
-        self.session = requests.Session()
-        self.session.headers.update(self.headers)
         self.login_page_res = self.session.get(self.login_url)
         # 检查响应状态
         if self._response_status_check(self.login_page_res) == 0:
